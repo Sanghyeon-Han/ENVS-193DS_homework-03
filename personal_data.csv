@@ -1,0 +1,15 @@
+﻿date,day,is_weekend,steps,hours_sleep,mood
+5/12/2025,Monday,No,8430,6.5,neutral
+5/13/2025,Tuesday,No,7550,7,happy
+5/14/2025,Wednesday,No,9320,6,tired
+5/15/2025,Thursday,No,10450,5.5,tired
+5/16/2025,Friday,No,8850,6.5,neutral
+5/17/2025,Saturday,Yes,6740,8,happy
+5/18/2025,Sunday,Yes,5890,9,relaxed
+5/19/2025,Monday,No,9100,6,neutral
+5/20/2025,Tuesday,No,8700,7,happy
+5/21/2025,Wednesday,No,9700,5.5,tired
+5/22/2025,Thursday,No,10200,6,stressed
+5/23/2025,Friday,No,9300,6.5,neutral
+5/24/2025,Saturday,Yes,6000,8.5,happy
+5/25/2025,Sunday,Yes,5500,9,relaxed
