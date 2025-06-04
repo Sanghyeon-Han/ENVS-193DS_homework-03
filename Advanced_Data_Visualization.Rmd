@@ -1,0 +1,77 @@
+---
+title: "Advanced_Data_Visualization"
+author: "Sanghyeon-Han"
+date: "2025-06-04"
+output: html_document
+---
+
+https://github.com/Sanghyeon-Han/ENVS-193DS_homework-03.git
+
+```{r setup}
+# Load required libraries
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(patchwork)
+library(scales)
+```
+
+# Load custom Google font
+``{r}
+font_add_google("Lato", "lato")
+showtext_auto()
+```
+
+# Load the data
+```{r}
+data <- read_csv(here("data", "personal_data.csv"))
+```
+
+#Creating Visualization1
+```{r}
+p1 <- ggplot(data, aes(x = day, y = steps, fill = is_weekend)) +
+  geom_col() +
+  labs(title = "Steps per Day", x = "Day", y = "Steps") +
+  theme_minimal()
+
+p1  # <- This will actually display the plot
+```
+
+
+```{r}
+# Creating Visualization1
+p1 <- ggplot(data, aes(x = date, y = hours_sleep)) +
+  geom_line(color = "#0073C2", size = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "Sleep Over Time",
+    subtitle = "Tracking my sleep hours day by day",
+    x = "Date", y = "Hours Slept"
+  ) +
+  theme_minimal(base_family = "lato")
+
+p1  # <- This will display the plot
+
+```
+
+```{r}
+# Creating Visualization2
+library(waffle)
+
+mood_counts <- data %>%
+  count(mood)
+
+library(scales)  # for hue_pal()
+
+p2 <- waffle(mood_counts, rows = 5,
+             title = "Mood Distribution",
+             colors = hue_pal()(nrow(mood_counts)))
+
+
+p2  # <- This will display the waffle chart
+```
